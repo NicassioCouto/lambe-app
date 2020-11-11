@@ -21,6 +21,7 @@ function MenuBar(){
                             borderTopRightRadius:30,
                             backgroundColor:'#3D3D3DCC',
                             backdropFilter:'blur(10px)',
+                            borderColor:'transparent',
                         },
                         tabStyle:{
                             alignItems:'center',
