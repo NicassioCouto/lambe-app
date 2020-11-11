@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Client from './src/pages/Client';
+import MenuBar from './src/routes/MenuBar';
 
 export default function App() {
   return (
-    <Client/>
+    <MenuBar/>
   );
 }
 
