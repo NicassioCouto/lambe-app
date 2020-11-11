@@ -18,11 +18,15 @@ const styles =  (size) => StyleSheet.create({
     container: {
         borderRadius: 50,
         padding: 5,
+        alignItems:'center',
+        justifyContent:'center',
     },
     image: {
         width: size,
         height: size,
         borderRadius: 500,
+        alignItems:'center',
+        justifyContent:'center',
       },
   });
 
