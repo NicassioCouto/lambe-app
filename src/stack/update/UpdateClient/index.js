@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png';
-import ButtonAction from '../../../components/atoms/ButtonAction'
+import Update from '../../../components/Organisms/Update'
 
 function index(){
         return (
             <>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
+                <Update entity="Client"/>
             </View>
             </ImageBackground>
-            <ButtonAction />
             </>
         )
 }

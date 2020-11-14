@@ -1,25 +1,14 @@
 import React, { useState,useEffect } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png'
-import ButtonAction from '../../../components/atoms/ButtonAction'
-import CircleAvatar from '../../../components/atoms/CircleAvatar'
-import ScrollContent from '../../../components/molecules/ScrollContent'
-import AuthorContact from '../../../components/molecules/AuthorContact'
-import getData from '../../../services/server'
+import Update from "../../../components/Organisms/Update";
 
 function index(){
-    const [user, setUser] = useState();
-    useEffect(() => {
-        (async () => {
-          const content = await getData("users");
-          setUser(content);
-        })();
-      }, []);
 
         return (
         <>
             <ImageBackground source={bg} style={styles.image}>
-                <Text style={styles.title}>User Update</Text>
+                <Update entity="User"/>
             </ImageBackground>
         </>
         )

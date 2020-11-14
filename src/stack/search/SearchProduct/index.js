@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png'
-import ButtonAction from '../../../components/atoms/ButtonAction'
+import Search from "../../../components/Organisms/Search";
 
 export default class index extends Component {
     render() {
         return (<>
                 <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Text> Product Page </Text>
-                
+                <Search entity="Product"/>
             </View>
                 </ImageBackground>
-                <ButtonAction />
             </>
         )
     }
@@ -21,8 +19,6 @@ export default class index extends Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
     },
     image: {
         flex: 1,

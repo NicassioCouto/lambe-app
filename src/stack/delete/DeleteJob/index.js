@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png';
-import ButtonAction from '../../../components/atoms/ButtonAction'
+import Delete from "../../../components/Organisms/Delete";
 export default class index extends Component {
     render() {
         return (<>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Text> Job Page </Text>
+                <Delete entity="Job"/>
             </View>
             </ImageBackground>
-            <ButtonAction />
             </>
         )
     }

@@ -20,8 +20,8 @@ function index(){
 
     const {navigate} = useNavigation();
 
-    function handlecreate(){
-        navigate('UserUpdate');
+    function handleUpdate(){
+        navigate('Update');
     }
 
         return (
@@ -33,7 +33,7 @@ function index(){
                         <CircleAvatar source={user[0].avatar} size={180}/>
                         <Text style={styles.title}>{user[0].name}</Text>
                         <Text style={styles.subtitle}>{user[0].email}</Text>
-                        <TouchableOpacity onPress={handlecreate}>
+                        <TouchableOpacity onPress={handleUpdate}>
                             <Text style={styles.link}>Atualizar Cadastro</Text>
                         </TouchableOpacity>
 
