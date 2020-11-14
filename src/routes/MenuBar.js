@@ -1,10 +1,10 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import User from '../pages/User';
-import Client from '../pages/Client';
-import Product from '../pages/Product';
-import Job from '../pages/Job';
+import UserStack from '../routes/UserStack';
+import Client from '../stack/entity/Client';
+import Product from '../stack/entity/Product';
+import Job from '../stack/entity/Job';
 import { MaterialIcons} from '@expo/vector-icons';
 
 const {Navigator,Screen} = createBottomTabNavigator();
@@ -39,7 +39,7 @@ function MenuBar(){
                 >
                 <Screen 
                     name="User" 
-                    component={User} 
+                    component={UserStack}
                     options={{
                         tabBarIcon: ({size,color})=>{
                             return(

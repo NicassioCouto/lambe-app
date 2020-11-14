@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { Component } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
-import bg from '../../util/img/bgtop.png';
-import ButtonAction from '../../components/atoms/ButtonAction'
-
-function index(){
-        return (
-            <>
+import bg from '../../../util/img/bgtop.png';
+import ButtonAction from '../../../components/atoms/ButtonAction'
+export default class index extends Component {
+    render() {
+        return (<>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
+                <Text> Job Page </Text>
             </View>
             </ImageBackground>
             <ButtonAction />
             </>
         )
+    }
 }
 
 const styles = StyleSheet.create({
@@ -27,5 +28,3 @@ const styles = StyleSheet.create({
         justifyContent: "center"
       },
   });
-
-export default index;

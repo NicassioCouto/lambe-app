@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
-import bg from '../../util/img/bgtop.png';
-import ButtonAction from '../../components/atoms/ButtonAction'
+import bg from '../../../util/img/bgtop.png';
+import ButtonAction from '../../../components/atoms/ButtonAction'
 export default class index extends Component {
     render() {
         return (<>

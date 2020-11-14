@@ -7,7 +7,7 @@ function index(props) {
         return (
             <>
                 <View style={styles.container}>
-                    <ScrollView>
+                    <ScrollView style={styles.scroll}>
                         {props.children}
                     </ScrollView>
                 </View>
@@ -15,10 +15,16 @@ function index(props) {
         )
 }
 
-const styles = StyleSheet.create({
+const styles = (ScreenHeight) => StyleSheet.create({
     container: {
+        flex: 1,
+        paddingTop:30,
         width: 300,
-        height:523,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    scroll:{
+        padding:30,
         alignItems: 'center',
         justifyContent: 'center',
     }

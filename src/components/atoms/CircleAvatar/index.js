@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Text, View,StyleSheet, Image } from 'react-native'
-import aaaa from '../../../util/img/bgbot.png'
+
 
 function index(props){
 
