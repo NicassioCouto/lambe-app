@@ -1,18 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component,useState, useEffect } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png';
 import Search from "../../../components/Organisms/Search";
-export default class index extends Component {
-    render() {
+import getData from "../../../services/server";
+
+
+function index(){
+    const [job, setJob] = useState();
+    useEffect(() => {
+        (async () => {
+            const content = await getData("jobs");
+            setJob(content);
+        })();
+    }, []);
         return (<>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Search entity="Job"/>
+                <Search entity={job} placeholder="Pesquisar Trampo"/>
             </View>
             </ImageBackground>
             </>
         )
-    }
 }
 
 const styles = StyleSheet.create({
@@ -25,3 +33,4 @@ const styles = StyleSheet.create({
         justifyContent: "center"
       },
   });
+export default index;

@@ -1,19 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component,useState, useEffect  } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png'
 import Search from "../../../components/Organisms/Search";
+import getData from "../../../services/server";
 
-export default class index extends Component {
-    render() {
+function index(){
+    const [product, setProduct] = useState();
+    useEffect(() => {
+        (async () => {
+            const content = await getData("products");
+            setProduct(content);
+        })();
+    }, []);
+
         return (<>
                 <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Search entity="Product"/>
+                <Search entity={product} placeholder="Pesquisar Produto"/>
             </View>
                 </ImageBackground>
             </>
         )
-    }
 }
 
 const styles = StyleSheet.create({
@@ -26,3 +33,5 @@ const styles = StyleSheet.create({
         justifyContent: "center"
       },
   });
+
+export default index;

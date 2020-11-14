@@ -1,14 +1,21 @@
 import React from 'react'
 import { View,Text,StyleSheet } from 'react-native'
+import ScrollContent from "../../molecules/ScrollContent";
+import CircleAvatar from "../../atoms/CircleAvatar";
+import {TouchableOpacity} from "react-native-gesture-handler";
+import ButtonAction from "../../atoms/ButtonAction";
 
 
 function index(props){
 
     return (
         <>
-            <View style={styles.container}>
-                <Text style={styles.title}>Create {props.entity}</Text>
-            </View>
+            <ScrollContent>
+                <View style={styles.container}>
+
+                </View>
+            </ScrollContent>
+            <ButtonAction route="Search" icon="send"/>
         </>
     )
 }

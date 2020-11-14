@@ -5,16 +5,16 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import {useNavigation} from "@react-navigation/native";
 
 
-function index(){
+function index(props){
 
     const {navigate} = useNavigation();
     function handleCreate(){
-        navigate('Create');
+        navigate(props.route?props.route:'Create');
     }
         return (
             <View style={styles.container}>
                 <TouchableOpacity style={styles.button} onPress={handleCreate}>
-                        <MaterialIcons name="add" size={30} color="#E8E8E8"/>
+                        <MaterialIcons name={props.icon?props.icon:"add"} size={30} color="#E8E8E8"/>
                 </TouchableOpacity>
             </View>
         )

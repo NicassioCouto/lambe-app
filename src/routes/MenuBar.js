@@ -50,7 +50,7 @@ function MenuBar(){
                 />
                 <Screen 
                     name="Client" 
-                    component={ClientStack}
+                    component={ProductStack}
                     options={{
                         tabBarIcon: ({size,color})=>{
                             return(
@@ -61,7 +61,7 @@ function MenuBar(){
                 />
                 <Screen 
                     name="Product" 
-                    component={ProductStack}
+                    component={ClientStack}
                     options={{
                         tabBarIcon: ({size,color})=>{
                             return(
