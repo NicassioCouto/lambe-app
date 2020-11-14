@@ -1,18 +1,23 @@
-import React, { Component } from 'react'
-import { View, StyleSheet } from 'react-native'
+import React from 'react'
+import { View,StyleSheet } from 'react-native'
 import { MaterialIcons} from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 
-export default class index extends Component {
-    render() {
+function index(){
+
+    function handleCreate(){
+        navigate('Create');
+    }
         return (
             <>
-                <View style={styles.container}>
-                <MaterialIcons name="add" size={30} color="#E8E8E8"/>
-                </View>
+                <TouchableOpacity onPress={handleCreate}>
+                    <View style={styles.container}>
+                        <MaterialIcons name="add" size={30} color="#E8E8E8"/>
+                    </View>
+                </TouchableOpacity>
             </>
         )
-    }
 }
 
 const styles = StyleSheet.create({
@@ -29,3 +34,5 @@ const styles = StyleSheet.create({
       right:10,
     }
   });
+
+export default index;

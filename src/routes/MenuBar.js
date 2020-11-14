@@ -2,9 +2,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import UserStack from '../routes/UserStack';
-import Client from '../stack/entity/Client';
-import Product from '../stack/entity/Product';
-import Job from '../stack/entity/Job';
+import ClientStack from './ClientStack';
+import ProductStack from './ProductStack';
+import JobStack from './JobStack';
 import { MaterialIcons} from '@expo/vector-icons';
 
 const {Navigator,Screen} = createBottomTabNavigator();
@@ -50,7 +50,7 @@ function MenuBar(){
                 />
                 <Screen 
                     name="Client" 
-                    component={Client}
+                    component={ClientStack}
                     options={{
                         tabBarIcon: ({size,color})=>{
                             return(
@@ -61,7 +61,7 @@ function MenuBar(){
                 />
                 <Screen 
                     name="Product" 
-                    component={Product}
+                    component={ProductStack}
                     options={{
                         tabBarIcon: ({size,color})=>{
                             return(
@@ -72,7 +72,7 @@ function MenuBar(){
                 />
                 <Screen 
                     name="Job" 
-                    component={Job}
+                    component={JobStack}
                     options={{
                         
                         tabBarIcon: ({size,color})=>{

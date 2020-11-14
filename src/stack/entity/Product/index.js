@@ -8,8 +8,7 @@ export default class index extends Component {
         return (<>
                 <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Text> Product Page </Text>
-                
+                <Text style={styles.title}>Product Update</Text>
             </View>
                 </ImageBackground>
                 <ButtonAction />
