@@ -1,5 +1,6 @@
 import React from 'react'
 import { View,Text,StyleSheet } from 'react-native'
+import FormList from "../../molecules/FormList";
 
 
 function index(props){
@@ -7,7 +8,8 @@ function index(props){
     return (
         <>
             <View style={styles.container}>
-                <Text style={styles.title}>Update {props.entity}</Text>
+                <Text style={styles.title}>{props.entitytitle?props.entitytitle:"Nova Entidade"}</Text>
+                <FormList entity={props.entity} entitytitle={props.entitytitle}/>
             </View>
         </>
     )

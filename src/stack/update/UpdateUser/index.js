@@ -4,11 +4,23 @@ import bg from '../../../util/img/bgtop.png'
 import Update from "../../../components/Organisms/Update";
 
 function index(){
+    const attr = [
+        {name: "name", type: String, required: true},
+        {name: "nickname", type: String, required: true},
+        {name: "lastname", type: String, required: true},
+        {name: "cpf", type: String, required: true},
+        {name:"birthday", type: String, required: true},
+        {name:"avatar", type: String, required: true},
+        {name:"facebook", type: String, required: true},
+        {name:"instagram", type: String, required: true},
+        {name:"email", type: String, required: true},
+        {name:"phone",type: String, required: true}
+    ]
 
         return (
         <>
             <ImageBackground source={bg} style={styles.image}>
-                <Update entity="User"/>
+                <Update entitytitle="Editar Usuário" entity={attr}/>
             </ImageBackground>
         </>
         )

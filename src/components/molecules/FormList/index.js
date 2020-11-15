@@ -9,8 +9,7 @@ function index(props){
     return (
         <View style={styles.container}>
             <ScrollContent>
-                <Text style={styles.title}>{props.entitytitle?props.entitytitle:"Nova Entidade"}</Text>
-                <InputArea placeholder="exemplo"/>
+                {props.entity && props.entity.map(attr => (<InputArea key={attr.name} placeholder={attr.name}/>))}
             </ScrollContent>
         </View>
     )
@@ -18,7 +17,8 @@ function index(props){
 
 const styles = StyleSheet.create({
     container: {
-        width:300
+        width:300,
+        marginTop:30
     },
     title: {
         fontSize:30,

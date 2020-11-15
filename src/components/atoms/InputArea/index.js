@@ -7,7 +7,9 @@ function index(props){
     return (
         <>
             <View style={styles.container}>
-                <TextInput placeholder={props.placeholder} style={styles.input}/>
+                <View style={styles.inputarea}>
+                    <TextInput placeholder={props.placeholder} style={styles.input}/>
+                </View>
             </View>
         </>
     )
@@ -15,6 +17,10 @@ function index(props){
 
 const styles = StyleSheet.create({
     container: {
+        width: 300,
+        height: 50,
+    },
+    inputarea: {
         width: 300,
         height: 35,
         backgroundColor: '#ffffffcc',

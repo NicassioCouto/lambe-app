@@ -11,6 +11,7 @@ function index(props){
         <>
             <ScrollContent>
                 <View style={styles.container}>
+                    <Text style={styles.title}>{props.entitytitle?props.entitytitle:"Nova Entidade"}</Text>
                     <FormList entity={props.entity} entitytitle={props.entitytitle}/>
                 </View>
             </ScrollContent>
