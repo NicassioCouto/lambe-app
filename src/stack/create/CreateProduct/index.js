@@ -8,7 +8,7 @@ export default class index extends Component {
         return (<>
                 <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Create entity="Product"/>
+                <Create entitytitle="Novo Produto"/>
             </View>
                 </ImageBackground>
             </>

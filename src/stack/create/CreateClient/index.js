@@ -4,11 +4,23 @@ import bg from '../../../util/img/bgtop.png';
 import Create from "../../../components/Organisms/Create";
 
 function index(){
+    const dominio = [
+        {name: "name", type: String, required: true},
+        {name: "nickname", type: String, required: true},
+        {name: "lastname", type: String, required: true},
+        {name: "cpf", type: String, required: true},
+        {name:"birthday", type: String, required: true},
+        {name:"avatar", type: String, required: true},
+        {name:"facebook", type: String, required: true},
+        {name:"instagram", type: String, required: true},
+        {name:"email", type: String, required: true},
+        {name:"phone",type: String, required: true}
+    ]
         return (
             <>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Create entity="Product"/>
+                <Create entitytitle="Novo Cliente"/>
             </View>
             </ImageBackground>
             </>

@@ -1,8 +1,7 @@
 import React from 'react'
 import { View,Text,StyleSheet } from 'react-native'
 import ScrollContent from "../../molecules/ScrollContent";
-import CircleAvatar from "../../atoms/CircleAvatar";
-import {TouchableOpacity} from "react-native-gesture-handler";
+import FormList from "../../molecules/FormList";
 import ButtonAction from "../../atoms/ButtonAction";
 
 
@@ -12,7 +11,7 @@ function index(props){
         <>
             <ScrollContent>
                 <View style={styles.container}>
-
+                    <FormList entity={props.entity} entitytitle={props.entitytitle}/>
                 </View>
             </ScrollContent>
             <ButtonAction route="Search" icon="send"/>
