@@ -3,11 +3,13 @@ import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png';
 import Entity from "../../../components/Organisms/Entity";
 export default class index extends Component {
+    
     render() {
+        const entity = props.navigation.getParam("entity")
         return (<>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Entity title="Job"/>
+            {entity && <Entity entity={entity}/>}
             </View>
             </ImageBackground>
             </>

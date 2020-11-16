@@ -4,11 +4,12 @@ import bg from '../../../util/img/bgtop.png';
 import Entity from "../../../components/Organisms/Entity";
 
 function index(prop){
+  const entity = props.navigation.getParam("entity")
         return (
             <>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Entity title={prop.entity}/>
+                {entity && <Entity entity={entity}/>}
             </View>
             </ImageBackground>
             </>

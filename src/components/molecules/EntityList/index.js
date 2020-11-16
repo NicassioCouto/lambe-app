@@ -8,8 +8,8 @@ import {useNavigation} from "@react-navigation/native";
 
 function index(props){
     const {navigate} = useNavigation();
-    function handleUpdate(){
-        navigate('Entity',{ title: 'Michaś' });
+    function handleUpdate(entity){
+        navigate('Entity',{entity});
     }
 
     return (
@@ -20,7 +20,7 @@ function index(props){
                         key={entity._id}
                         avatar = {entity.avatar}
                         title={entity.title?entity.title:entity.name}
-                        onPress={handleUpdate}
+                        onPress={()=> handleUpdate(entity)}
                         subtitle={entity.subtitle?entity.subtitle:entity.email}/>
                     ))}
             </ScrollContent>

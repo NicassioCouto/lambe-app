@@ -5,10 +5,11 @@ import Entity from "../../../components/Organisms/Entity";
 
 export default class index extends Component {
     render() {
+        const entity = props.navigation.getParam("entity")
         return (<>
                 <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Entity title="Product"/>
+            {entity && <Entity entity={entity}/>}
             </View>
                 </ImageBackground>
             </>

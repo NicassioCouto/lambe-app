@@ -8,6 +8,7 @@ import ScrollContent from "../../molecules/ScrollContent";
 
 
 function index(props){
+    const {entity} = props
 
     const {navigate} = useNavigation();
 
@@ -23,14 +24,14 @@ function index(props){
         <>
             <ScrollContent>
             <View style={styles.container}>
-                <CircleAvatar source={props.avatar} size={180}/>
-                <Text style={styles.title}>{props.title}</Text>
-                <Text style={styles.subtitle}>{props.subtitle}</Text>
+                <CircleAvatar source={entity.avatar} size={180}/>
+                <Text style={styles.title}>{entity.title}</Text>
+                <Text style={styles.subtitle}>{entity.subtitle}</Text>
                 <TouchableOpacity onPress={handleUpdate}>
                     <Text style={styles.link}>Atualizar Cadastro</Text>
                 </TouchableOpacity>
-                {props.children}
-                {props.delete && (
+                {entity.children}
+                {entity.delete && (
                     <TouchableOpacity onPress={handleDelete}>
                         <Text style={styles.link}>Deletar Cadastro</Text>
                     </TouchableOpacity>
