@@ -1,6 +1,7 @@
 import React from 'react'
 import { View,Text,StyleSheet } from 'react-native'
 import CircleAvatar from '../../atoms/CircleAvatar'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 
 
@@ -8,13 +9,13 @@ function index(props){
 
     var defaultimages = "https://img.pngio.com/username-icon-png-and-vector-for-free-download-pngtree-username-png-512_512.png";
     return (
-        <View style={styles.container}>
+        <TouchableOpacity  style={styles.container} onPress={props.onPress}>
             <CircleAvatar size={55} source={props.avatar?props.avatar:defaultimages} />
             <View style={styles.subcontainer}>
                 <Text style={styles.title}>{props.title}</Text>
                 <Text style={styles.subtitle}>{props.subtitle}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

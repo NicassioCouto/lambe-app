@@ -1,16 +1,21 @@
 import React from 'react'
 import { View,Text,StyleSheet } from 'react-native'
 import FormList from "../../molecules/FormList";
+import ScrollContent from "../../molecules/ScrollContent";
+import ButtonAction from "../../atoms/ButtonAction";
 
 
 function index(props){
 
     return (
         <>
-            <View style={styles.container}>
-                <Text style={styles.title}>{props.entitytitle?props.entitytitle:"Nova Entidade"}</Text>
-                <FormList entity={props.entity} entitytitle={props.entitytitle}/>
-            </View>
+            <ScrollContent>
+                <View style={styles.container}>
+                    <Text style={styles.title}>{props.entitytitle?props.entitytitle:"Atualizarzcxcvclçcx,clmcldsvvdskof Entidade"}</Text>
+                    <FormList entity={props.entity} entitytitle={props.entitytitle}/>
+                </View>
+            </ScrollContent>
+            <ButtonAction route="Search" icon="send"/>
         </>
     )
 }

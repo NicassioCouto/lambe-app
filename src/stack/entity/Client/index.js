@@ -3,12 +3,12 @@ import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png';
 import Entity from "../../../components/Organisms/Entity";
 
-function index(){
+function index(prop){
         return (
             <>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Entity entity="Client"/>
+                <Entity title={prop.entity}/>
             </View>
             </ImageBackground>
             </>

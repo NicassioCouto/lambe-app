@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+    import { createStackNavigator } from '@react-navigation/stack';
 import Client from '../stack/entity/Client'
 import CreateClient from '../stack/create/CreateClient'
 import SearchClient from '../stack/search/SearchClient'
