@@ -1,8 +1,11 @@
 {
   "expo": {
-    "name": "lambe-app",
-    "slug": "lambe-app",
+    "name": "lambe",
+    "slug": "lambe",
     "version": "1.0.0",
+    "platforms":[
+      "android"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -23,7 +26,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "dev.cancio.lambe",
+      "versionCode": 2,
+      "permissions": []
     },
     "web": {
       "favicon": "./assets/favicon.png"

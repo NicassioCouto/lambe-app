@@ -5,6 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "android:apk":"expo build:android -t apk",
+    "android:bundle":"expo build:android -t app-bundle",
     "eject": "expo eject"
   },
   "dependencies": {
