@@ -3,12 +3,13 @@ import { Text, View,StyleSheet, Image } from 'react-native'
 
 
 function index(props){
+    const defaultimages = "https://img.pngio.com/username-icon-png-and-vector-for-free-download-pngtree-username-png-512_512.png";
 
         return (
             <>
                 <View style={styles.container}>
 
-                    <Image style={styles(props.size).image} source={{uri: props.source}} width={props.size} height={props.size}/>
+                    <Image style={styles(props.size).image} source={{uri: props.source?props.source:defaultimages}} width={props.size} height={props.size}/>
                 </View>
             </>
         )

@@ -7,10 +7,10 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 
 function index(props){
 
-    var defaultimages = "https://img.pngio.com/username-icon-png-and-vector-for-free-download-pngtree-username-png-512_512.png";
+
     return (
         <TouchableOpacity  style={styles.container} onPress={props.onPress}>
-            <CircleAvatar size={55} source={props.avatar?props.avatar:defaultimages} />
+            <CircleAvatar size={55} source={props.avatar} />
             <View style={styles.subcontainer}>
                 <Text style={styles.title}>{props.title}</Text>
                 <Text style={styles.subtitle}>{props.subtitle}</Text>
