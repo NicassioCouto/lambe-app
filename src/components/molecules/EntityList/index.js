@@ -9,7 +9,7 @@ import {useNavigation} from "@react-navigation/native";
 function index(props){
     const {navigate} = useNavigation();
     function handleUpdate(entity){
-        navigate('Entity',{entity});
+        navigate('Entity',entity);
     }
 
     return (
