@@ -10,11 +10,13 @@ async function getData(entity) {
     console.log(err.message);
   }
 }
-export async function createData(entity,node_id,body_data) {
+export async function createData(entity,body_data) {
+  const url = `${base_url}${entity}`;  
   try {
-    const res = await (await axios.post(`${base_url}/${entity}/${node_id}`, body_data));
+    const res = await (await axios.post(url, body_data));
     return res.data;
   } catch (err) {
+    console.log(`${base_url}${entity}`);
     console.log(err.message);
   }
 }

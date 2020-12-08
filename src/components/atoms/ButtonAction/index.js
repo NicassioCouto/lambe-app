@@ -3,12 +3,27 @@ import { View,StyleSheet } from 'react-native'
 import { MaterialIcons} from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import {useNavigation} from "@react-navigation/native";
+import { createData } from '../../../services/server';
 
 
 function index(props){
 
     const {navigate} = useNavigation();
+    const dados = {
+		name:"Live no deu certo",
+		value: "50",
+		description: "Canais Parceiros",
+		about: "A gente toca o que o cliente pedir na live."
+    }
+
+    async function createEntity(){
+        createData("product",dados)
+        //Alert.alert(`Entidade criada com sucesso!`)
+    }
+
     function handleCreate(){
+        if(props.create){ createEntity()}
+        console.log('aaaaa')
         navigate(props.route?props.route:'Create');
     }
         return (
