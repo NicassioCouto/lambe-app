@@ -10,7 +10,7 @@ function index(props){
 
     const {navigate} = useNavigation();
     const dados = {
-		name:"Live no deu certo",
+		name:"Só pra testar mesmo",
 		value: "50",
 		description: "Canais Parceiros",
 		about: "A gente toca o que o cliente pedir na live."
@@ -23,6 +23,7 @@ function index(props){
 
     function handleCreate(){
         if(props.create){ createEntity()}
+        if(props.formRef){props.formRef.current.submitForm()}
         console.log('aaaaa')
         navigate(props.route?props.route:'Create');
     }

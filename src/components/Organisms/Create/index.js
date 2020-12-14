@@ -1,35 +1,28 @@
-import React, { useState,useEffect }  from 'react'
+import React, { useCallback,useRef }  from 'react'
 import { View,Text,StyleSheet, Alert } from 'react-native'
 import ScrollContent from "../../molecules/ScrollContent";
 import FormList from "../../molecules/FormList";
 import ButtonAction from "../../atoms/ButtonAction";
-import createData from '../../../services/server';
+import {Form} from "@unform/mobile";
+import {FormHandles} from "@unform/core";
 
 function index(props){
-    /*const dados = {
-        name:"FOi",
-        nickname:"Foi",
-        lastname: "FOi",
-        cpf: "000.000.000-00",
-        birthday: "28/02/1997",
-        avatar: "https://i.pinimg.com/280x280_RS/73/48/b3/7348b354734a97a3abd7df51020bc66e.jpg",
-        facebook:"@filipecancio",
-        instagram: "@cancitoo",
-        email: "filipe.cancio@gmail.com",
-        phone: "77 99999-7777"
-    }*/
-    
-
+    const formRef = useRef(null)
+    const handleData = useCallback((data)=>{
+        console.log(data);
+    },[])
 
     return (
         <>
+        <Form ref={formRef} onSubmit={handleData}>
             <ScrollContent>
                 <View style={styles.container}>
                     <Text style={styles.title}>{props.entitytitle?props.entitytitle:"Nova Entidade"}</Text>
                     <FormList entity={props.entity} entitytitle={props.entitytitle}/>
                 </View>
             </ScrollContent>
-            <ButtonAction route="Search" icon="send" create/>
+            <ButtonAction formRef={formRef} route="Search" icon="send" create/>
+        </Form>
         </>
     )
 }
