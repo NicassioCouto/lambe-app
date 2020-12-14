@@ -10,7 +10,7 @@ function index(){
         {name: "nickname", type: String, required: true},
         {name: "lastname", type: String, required: true},
         {name: "cpf", type: String, required: true},
-        {name:"birthday", type: String, required: true},
+        {name:"birthday", type: Number, required: true},
         {name:"avatar", type: String, required: true},
         {name:"facebook", type: String, required: true},
         {name:"instagram", type: String, required: true},

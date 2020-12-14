@@ -31,6 +31,7 @@ function index(props){
                     <TextInput 
                         ref={inputElementRef}
                         placeholder={props.placeholder} 
+                        keyboardType = {props.keyboardType}
                         style={styles.input}
                         defaultValue={defaultValue}
                         onChangeText={(value) =>{
