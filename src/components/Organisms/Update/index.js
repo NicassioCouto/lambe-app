@@ -4,12 +4,13 @@ import FormList from "../../molecules/FormList";
 import ScrollContent from "../../molecules/ScrollContent";
 import ButtonAction from "../../atoms/ButtonAction";
 import {Form} from "@unform/mobile";
+import { updateData } from '../../../services/server';
 
 
 function index(props){
     const formRef = useRef(null)
     const handleData = useCallback((data)=>{
-        console.log(data);
+        updateData(props.type,props.id,data);
     },[])
 
     return (

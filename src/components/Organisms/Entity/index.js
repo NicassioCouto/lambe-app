@@ -13,7 +13,7 @@ function index(props){
     const {navigate} = useNavigation();
 
     function handleUpdate(){
-        navigate('Update');
+        navigate('Update',entity);
     }
     function handleDelete(){
         navigate('Delete');

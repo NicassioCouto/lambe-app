@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png';
 import Update from "../../../components/Organisms/Update";
-export default class index extends Component {
-    render() {
+
+function index(props){
+
+        const type = "job";
+        const entity = props.route.params;
         const attr = [
             {name: "name", type: String, required: true},
             {name: "value", type: String, required: true},
@@ -13,12 +16,11 @@ export default class index extends Component {
         return (<>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Update entitytitle="Editar Trampo" entity={attr}/>
+                <Update entitytitle="Editar Trampo" entity={attr} type={type} id={entity._id}/>
             </View>
             </ImageBackground>
             </>
         )
-    }
 }
 
 const styles = StyleSheet.create({
@@ -33,3 +35,5 @@ const styles = StyleSheet.create({
         justifyContent: "center"
       },
   });
+
+  export default index;

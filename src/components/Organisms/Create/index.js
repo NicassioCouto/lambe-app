@@ -21,7 +21,7 @@ function index(props){
                     <FormList entity={props.entity} entitytitle={props.entitytitle}/>
                 </View>
             </ScrollContent>
-            <ButtonAction formRef={formRef} route="Search" icon="send" create/>
+            <ButtonAction formRef={formRef} route="Search" icon="send"/>
         </Form>
         </>
     )

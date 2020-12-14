@@ -3,7 +3,9 @@ import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png';
 import Update from '../../../components/Organisms/Update'
 
-function index(){
+function index(props){
+    const type = "client";
+    const entity = props.route.params;
     const attr = [
         {name: "name", type: String, required: true},
         {name: "nickname", type: String, required: true},
@@ -20,7 +22,7 @@ function index(){
             <>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Update entitytitle="Editar Cliente" entity={attr}/>
+                <Update entitytitle="Editar Cliente" entity={attr} type={type} id={entity._id}/>
             </View>
             </ImageBackground>
             </>
