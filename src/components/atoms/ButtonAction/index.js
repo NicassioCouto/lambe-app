@@ -3,13 +3,19 @@ import { View,StyleSheet } from 'react-native'
 import { MaterialIcons} from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import {useNavigation} from "@react-navigation/native";
+import { deleteData } from '../../../services/server';
 
 function index(props){
 
     const {navigate} = useNavigation();
 
+    const handleDelete = (id,type)=>{
+        deleteData(type,id)
+    }
+
     function handleCreate(){
         if(props.formRef){props.formRef.current.submitForm()}
+        if(props.delete){handleDelete(props.delete.id,props.delete.type)}
         navigate(props.route?props.route:'Create');
     }
         return (

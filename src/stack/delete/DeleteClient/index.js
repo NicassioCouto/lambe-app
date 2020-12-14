@@ -4,12 +4,15 @@ import bg from '../../../util/img/bgtop.png';
 import ButtonAction from '../../../components/atoms/ButtonAction'
 import Delete from "../../../components/Organisms/Delete";
 
-function index(){
+function index(props){
+  const type = "client";
+  const entity = props.route.params;
+
         return (
             <>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Delete entity="Client"/>
+                <Delete entity={entity} type={type} id={entity._id}/>
             </View>
             </ImageBackground>
             </>

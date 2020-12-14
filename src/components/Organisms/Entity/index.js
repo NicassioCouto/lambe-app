@@ -16,7 +16,7 @@ function index(props){
         navigate('Update',entity);
     }
     function handleDelete(){
-        navigate('Delete');
+        navigate('Delete',entity);
     }
 
 
