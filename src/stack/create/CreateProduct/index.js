@@ -5,6 +5,7 @@ import Create from "../../../components/Organisms/Create";
 
 export default class index extends Component {
     render() {
+        const type = "product";
         const attr = [
             {name: "name", type: String, required: true},
             {name: "value", type: String, required: true},
@@ -14,7 +15,7 @@ export default class index extends Component {
         return (<>
                 <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Create entitytitle="Novo Produto" entity={attr}/>
+                <Create entitytitle="Novo Produto" entity={attr} type={type}/>
             </View>
                 </ImageBackground>
             </>

@@ -4,6 +4,7 @@ import bg from '../../../util/img/bgtop.png';
 import Create from "../../../components/Organisms/Create";
 
 function index(){
+    const type = "client";
     const attr = [
         {name: "name", type: String, required: true},
         {name: "nickname", type: String, required: true},
@@ -20,7 +21,7 @@ function index(){
             <>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Create entitytitle="Novo Cliente" entity={attr}/>
+                <Create entitytitle="Novo Cliente" entity={attr} type={type}/>
             </View>
             </ImageBackground>
             </>

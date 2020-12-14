@@ -4,6 +4,7 @@ import bg from '../../../util/img/bgtop.png';
 import Create from "../../../components/Organisms/Create";
 export default class index extends Component {
     render() {
+        const type = "job";
         const attr = [
             {name: "client", type: String, required: true},
             {name: "product", type: String, required: true},
@@ -15,7 +16,7 @@ export default class index extends Component {
         return (<>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Create entitytitle="Novo Trampo" entity={attr}/>
+                <Create entitytitle="Novo Trampo" entity={attr} type={type}/>
             </View>
             </ImageBackground>
             </>
