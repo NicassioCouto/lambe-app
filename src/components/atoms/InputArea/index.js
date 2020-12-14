@@ -1,12 +1,22 @@
-import React,{useEffect,useRef} from 'react'
-import { Text, View,StyleSheet,TextInput, Image } from 'react-native'
+import React,{useEffect,useRef,useState,useCallback} from 'react'
+import { Text, View,StyleSheet,TextInput } from 'react-native'
 import {useField} from "@unform/core";
+import DateTimePicker from '@react-native-community/datetimepicker';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 function index(props){
+    const [showDate, setshowDate] = useState(false);
+    const [selectedDate, setSelectedDate] = useState(new Date());
     const inputElementRef = useRef(null);
     const {registerField,defaultValue='',fieldName,error} = useField(props.placeholder)
-    const inputValueRef = useRef({value:defaultValue});
+    const inputValueRef = useRef({value:props.type == Date ? selectedDate.toISOString():defaultValue});
+
+    const handleDateToogle = useCallback(()=>{setshowDate(showDate => !showDate)},[])
+    const handleDateChange = useCallback((event,date)=>{
+        setshowDate(false)
+        if(date){setSelectedDate(date)}
+    },[])
 
     useEffect(()=>{
         registerField({
@@ -28,16 +38,36 @@ function index(props){
         <>
             <View style={styles.container}>
                 <View style={styles.inputarea}>
+                    {props.type == Date && (
+                        <>
+                            <TouchableOpacity style={styles.dateinput} onPress={handleDateToogle}>
+                            <Text style={styles.dateinputtext}>{props.placeholder}: {
+                            selectedDate.toLocaleDateString('pt-BR')
+                            }</Text>
+                            </TouchableOpacity>
+                            
+                        </>
+                    )}
                     <TextInput 
                         ref={inputElementRef}
                         placeholder={props.placeholder} 
                         keyboardType = {props.keyboardType}
                         style={styles.input}
-                        defaultValue={defaultValue}
+                        defaultValue={props.type == Date ? selectedDate.toISOString():defaultValue}
                         onChangeText={(value) =>{
                             inputValueRef.current.value = value;
                         }}
                     />
+                    {
+                                showDate && (
+                                    <DateTimePicker 
+                                        mode="date"             
+                                        display="spinner"
+                                        value={selectedDate}
+                                        onChange={handleDateChange}
+                                    />
+                                )
+                    }
                 </View>
             </View>
         </>
@@ -48,6 +78,14 @@ const styles = StyleSheet.create({
     container: {
         width: 300,
         height: 50,
+    },
+    dateinput:{
+        justifyContent: 'center',
+        paddingLeft: 5,
+        height: 35,
+    },
+    dateinputtext:{
+        color:'#939393',
     },
     inputarea: {
         width: 300,

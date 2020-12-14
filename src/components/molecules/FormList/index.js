@@ -22,7 +22,7 @@ function index(props){
     return (
         <View style={styles.container}>
             <ScrollContent>
-                {props.entity && props.entity.map(attr => (<InputArea key={attr.name} placeholder={attr.name} keyboardType={keyboardType(attr)}/>))}
+                {props.entity && props.entity.map(attr => (<InputArea key={attr.name} placeholder={attr.name} type={attr.type} keyboardType={keyboardType(attr)}/>))}
             </ScrollContent>
         </View>
     )

@@ -9,6 +9,7 @@ import { createData } from '../../../services/server';
 function index(props){
     const formRef = useRef(null)
     const handleData = useCallback((data)=>{
+        console.log(data);
         createData(props.type,data);
     },[])
 
