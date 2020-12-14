@@ -1,5 +1,5 @@
 import React from 'react'
-import { View,StyleSheet } from 'react-native'
+import { View,StyleSheet,ToastAndroid } from 'react-native'
 import { MaterialIcons} from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import {useNavigation} from "@react-navigation/native";
@@ -16,6 +16,7 @@ function index(props){
     function handleCreate(){
         if(props.formRef){props.formRef.current.submitForm()}
         if(props.delete){handleDelete(props.delete.id,props.delete.type)}
+        props.route && ToastAndroid.show("Operação Realizada com sucesso!", ToastAndroid.SHORT);
         navigate(props.route?props.route:'Create');
     }
         return (
