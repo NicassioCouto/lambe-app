@@ -4,13 +4,15 @@ import bg from '../../../util/img/bgtop.png';
 import Search from '../../../components/Organisms/Search'
 import getData from "../../../services/server";
 
-function index(){
+function index({ navigation }){
     const [client, setClient] = useState();
     useEffect(() => {
-        (async () => {
+        const pageUpdate = navigation.addListener('focus', async() => {
             const content = await getData("clients");
             setClient(content);
-        })();
+          });
+        
+          return pageUpdate;
     }, []);
 
         return (

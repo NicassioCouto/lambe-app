@@ -5,13 +5,15 @@ import Search from "../../../components/Organisms/Search";
 import getData from "../../../services/server";
 
 
-function index(){
+function index({ navigation }){
     const [job, setJob] = useState();
     useEffect(() => {
-        (async () => {
+        const pageUpdate = navigation.addListener('focus', async() => {
             const content = await getData("jobs");
             setJob(content);
-        })();
+          });
+        
+          return pageUpdate;
     }, []);
         return (<>
             <ImageBackground source={bg} style={styles.image}>
