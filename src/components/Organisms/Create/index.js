@@ -4,7 +4,6 @@ import ScrollContent from "../../molecules/ScrollContent";
 import FormList from "../../molecules/FormList";
 import ButtonAction from "../../atoms/ButtonAction";
 import {Form} from "@unform/mobile";
-import {FormHandles} from "@unform/core";
 
 function index(props){
     const formRef = useRef(null)

@@ -1,21 +1,28 @@
-import React from 'react'
+import React, { useCallback,useRef } from 'react'
 import { View,Text,StyleSheet } from 'react-native'
 import FormList from "../../molecules/FormList";
 import ScrollContent from "../../molecules/ScrollContent";
 import ButtonAction from "../../atoms/ButtonAction";
+import {Form} from "@unform/mobile";
 
 
 function index(props){
+    const formRef = useRef(null)
+    const handleData = useCallback((data)=>{
+        console.log(data);
+    },[])
 
     return (
         <>
-            <ScrollContent>
-                <View style={styles.container}>
-                    <Text style={styles.title}>{props.entitytitle?props.entitytitle:"Atualizarzcxcvclçcx,clmcldsvvdskof Entidade"}</Text>
-                    <FormList entity={props.entity} entitytitle={props.entitytitle}/>
-                </View>
-            </ScrollContent>
-            <ButtonAction route="Search" icon="send"/>
+            <Form ref={formRef} onSubmit={handleData}>
+                <ScrollContent>
+                    <View style={styles.container}>
+                        <Text style={styles.title}>{props.entitytitle?props.entitytitle:"Atualizarzcxcvclçcx,clmcldsvvdskof Entidade"}</Text>
+                        <FormList entity={props.entity} entitytitle={props.entitytitle}/>
+                    </View>
+                </ScrollContent>
+                <ButtonAction formRef={formRef} route="Search" icon="send"/>
+            </Form>
         </>
     )
 }

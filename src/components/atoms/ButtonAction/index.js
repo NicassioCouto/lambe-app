@@ -24,7 +24,6 @@ function index(props){
     function handleCreate(){
         if(props.create){ createEntity()}
         if(props.formRef){props.formRef.current.submitForm()}
-        console.log('aaaaa')
         navigate(props.route?props.route:'Create');
     }
         return (
