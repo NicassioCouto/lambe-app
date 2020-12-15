@@ -5,12 +5,20 @@ import FormList from "../../molecules/FormList";
 import ButtonAction from "../../atoms/ButtonAction";
 import {Form} from "@unform/mobile";
 import { createData } from '../../../services/server';
+import * as Yup from 'yup';
 
 function index(props){
     const formRef = useRef(null)
-    const handleData = useCallback((data)=>{
-        console.log(data);
-        createData(props.type,data);
+    const handleData = useCallback(async(data)=>{
+        try{
+            const schema = props.schema;
+            await schema.validate(data,{
+                abortEarly:false,
+            });
+            createData(props.type,data);
+        }catch(err){
+            console.log(err);
+        }
     },[])
 
     return (

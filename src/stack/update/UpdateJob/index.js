@@ -2,11 +2,20 @@ import React, { Component } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png';
 import Update from "../../../components/Organisms/Update";
+import * as Yup from 'yup';
 
 function index(props){
 
         const type = "job";
         const entity = props.route.params;
+        const schema = Yup.object().shape({
+            client: Yup.string().required('Cliente obrigatório'),
+            product: Yup.string().required('Produto obrigatório'),
+            scheduling: Yup.string(),
+            title: Yup.string().required('Título obrigatório'),
+            subtitle: Yup.string().required('Subtítulo obrigatório'),
+            description: Yup.string()
+        });
         const attr = [
             {name: "name", type: String, required: true},
             {name: "value", type: String, required: true},
@@ -16,7 +25,7 @@ function index(props){
         return (<>
             <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Update entitytitle="Editar Trampo" entity={attr} type={type} id={entity._id}/>
+                <Update entitytitle="Editar Trampo" entity={attr} type={type} id={entity._id} schema={schema}/>
             </View>
             </ImageBackground>
             </>

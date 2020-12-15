@@ -2,10 +2,17 @@ import React, { Component } from 'react'
 import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png'
 import Create from "../../../components/Organisms/Create";
+import * as Yup from 'yup';
 
 export default class index extends Component {
     render() {
         const type = "product";
+        const schema = Yup.object().shape({
+            name: Yup.string().required('Nome obrigatório'),
+            value: Yup.number().required('Valor obrigatório').min(0,'Número Inválido'),
+            description: Yup.string().required('Descrição obrigatória'),
+            about: Yup.string().required('Sobre obrigatório')
+        });
         const attr = [
             {name: "name", type: String, required: true},
             {name: "value", type: String, required: true},
@@ -15,7 +22,7 @@ export default class index extends Component {
         return (<>
                 <ImageBackground source={bg} style={styles.image}>
             <View style={styles.container}>
-                <Create entitytitle="Novo Produto" entity={attr} type={type}/>
+                <Create entitytitle="Novo Produto" entity={attr} type={type} schema={schema}/>
             </View>
                 </ImageBackground>
             </>
