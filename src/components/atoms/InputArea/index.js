@@ -58,6 +58,7 @@ function index(props){
                             inputValueRef.current.value = value;
                         }}
                     />
+                    
                     {
                                 showDate && (
                                     <DateTimePicker 
@@ -70,14 +71,23 @@ function index(props){
                     }
                 </View>
             </View>
+                <Text style={styles.error}>{error}</Text>
         </>
     )
 }
 
 const styles = StyleSheet.create({
+    error: {
+        width: 300,
+        height:20,
+        color: '#FF007A',
+        justifyContent: 'center',
+        marginBottom:5,
+
+    },
     container: {
         width: 300,
-        height: 50,
+        height: 40,
     },
     dateinput:{
         justifyContent: 'center',

@@ -1,23 +1,37 @@
 import React, { useCallback,useRef,useState }  from 'react'
-import { View,Text,StyleSheet, Alert } from 'react-native'
+import { View,Text,StyleSheet, ToastAndroid } from 'react-native'
 import ScrollContent from "../../molecules/ScrollContent";
 import FormList from "../../molecules/FormList";
 import ButtonAction from "../../atoms/ButtonAction";
 import {Form} from "@unform/mobile";
 import { createData } from '../../../services/server';
+import {useNavigation} from "@react-navigation/native";
 import * as Yup from 'yup';
 
 function index(props){
+    const {navigate} = useNavigation();
+
+    const getValidationError = (err)=>{
+        const ve = {}
+        err.inner.forEach(error=>ve[error.path]=error.message)
+        return ve
+    }
+
     const formRef = useRef(null)
     const handleData = useCallback(async(data)=>{
         try{
+            formRef.current?.setErrors({})
             const schema = props.schema;
             await schema.validate(data,{
                 abortEarly:false,
             });
+            
             createData(props.type,data);
+            navigate('Search');
+            ToastAndroid.show("Operação Realizada com sucesso!", ToastAndroid.SHORT);
         }catch(err){
-            console.log(err);
+            const errors = getValidationError(err);
+            formRef.current?.setErrors(errors)
         }
     },[])
 

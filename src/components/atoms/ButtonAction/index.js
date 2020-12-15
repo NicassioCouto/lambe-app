@@ -16,8 +16,8 @@ function index(props){
     function handleCreate(){
         if(props.formRef){props.formRef.current.submitForm()}
         if(props.delete){handleDelete(props.delete.id,props.delete.type)}
-        props.route && ToastAndroid.show("Operação Realizada com sucesso!", ToastAndroid.SHORT);
-        navigate(props.route?props.route:'Create');
+        //props.route && ToastAndroid.show("Operação Realizada com sucesso!", ToastAndroid.SHORT);
+        if(!props.formRef){navigate(props.route?props.route:'Create');}
     }
         return (
             <View style={styles.container}>
