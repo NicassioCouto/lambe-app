@@ -8,12 +8,18 @@ import AuthorContact from '../../../components/molecules/AuthorContact'
 import getData from '../../../services/server'
 import Entity from "../../../components/Organisms/Entity";
 
-function index(){
+function index({navigation}){
     const [user, setUser] = useState();
     useEffect(() => {
         (async () => {
-          const content = await getData("users");
-          setUser(content);
+            const content = await getData("users");
+                setUser(content);
+            const pageUpdate = navigation.addListener('focus', async() => {
+                const content = await getData("users");
+                setUser(content);
+              });
+            
+              return pageUpdate;
         })();
       }, []);
 
