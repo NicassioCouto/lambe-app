@@ -1,4 +1,4 @@
-import React, { useCallback,useRef,useState }  from 'react'
+import React, { useCallback,useRef }  from 'react'
 import { View,Text,StyleSheet, ToastAndroid } from 'react-native'
 import ScrollContent from "../../molecules/ScrollContent";
 import FormList from "../../molecules/FormList";
@@ -6,7 +6,6 @@ import ButtonAction from "../../atoms/ButtonAction";
 import {Form} from "@unform/mobile";
 import { createData } from '../../../services/server';
 import {useNavigation} from "@react-navigation/native";
-import * as Yup from 'yup';
 
 function index(props){
     const {navigate} = useNavigation();
