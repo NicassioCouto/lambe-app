@@ -56,10 +56,17 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         justifyContent: "center"
       },
-    text:{
+      title:{
         color: '#FFFFFF',
         marginTop: 14,
+        fontSize:20,
     },
+    text:{
+      color: '#FFFFFF',
+      marginTop: 14,
+      textAlign:'left',
+      width:300
+  },
     authors:{
         alignSelf: 'stretch',
     }
