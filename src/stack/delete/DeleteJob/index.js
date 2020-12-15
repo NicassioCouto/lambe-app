@@ -3,7 +3,7 @@ import { Text, View, StyleSheet,ImageBackground } from 'react-native'
 import bg from '../../../util/img/bgtop.png';
 import Delete from "../../../components/Organisms/Delete";
 function index(props){
-    const type = "jpb";
+    const type = "job";
     const entity = props.route.params;
         return (<>
             <ImageBackground source={bg} style={styles.image}>
